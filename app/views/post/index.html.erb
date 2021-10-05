@@ -1,0 +1,11 @@
+<h1>List of posts</h1>
+<% @posts.each do |post| %>
+    <p><%= post.content %></p>
+    <% if user_signed_in? %>
+        <small><%= post.user.email %></small>
+    <% end %>
+<% end %>
+
+<% if user_signed_in? %>
+    <%= render 'form' %>
+<% end %>
